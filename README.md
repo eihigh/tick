@@ -18,9 +18,7 @@ See also [example_test.go](https://github.com/eihigh/tick/blob/main/example_test
 ```go
 var t tick.Tick
 
-func update() {
-
-	// ... in your game loop ...
+for { // Here it should actually be the game's 'Update' function.
 
 	// We recommend to call Advance at the beginning of the loop.
 	// So the tick starts with 1.
