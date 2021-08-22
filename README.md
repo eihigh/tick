@@ -28,16 +28,16 @@ func update() {
 	e := t.Elapsed()
 
 	// Repeat to return to zero after counting 60 ticks.
-	t.Repeat(0, 60, func(n int, t Tick) {
+	t.Repeat(0, 60, func(n int, t tick.Tick) {
   
 		// Repeat to return to zero after counting 5 ticks.
-		t.Repeat(0, 5, func(n int, t Tick) {
+		t.Repeat(0, 5, func(n int, t tick.Tick) {
     
 			// Called only during the time span.
-			t.Span(0, 2, func(t Tick) {
+			t.Span(0, 2, func(t tick.Tick) {
 				fmt.Println(e, "foo?", t.Elapsed())
         
-			}).Span(0, 3, func(t Tick) {
+			}).Span(0, 3, func(t tick.Tick) {
 				// Called after the previous time span has ended.
 				fmt.Println(e, "bar!", t.Elapsed())
 			})
