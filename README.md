@@ -44,6 +44,31 @@ for { // Here it should actually be the game's 'Update' function.
 }
 ```
 
+Equivalent Go Code:
+```go
+for {
+	t += 1
+	{
+		n := t / 60
+		t := t % 60
+		{
+			n := t / 5
+			t := t % 5
+			{
+				if 0 <= t && t < 2 {
+					fmt.Println("foo?")
+				} else {
+					t -= 2
+					if 0 <= t && t < 3 {
+						fmt.Println("bar!")
+					}
+				}
+			}
+		}
+	}
+}
+```
+
 Output:
 ```
 1 foo? 1
